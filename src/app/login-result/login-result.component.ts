@@ -18,6 +18,9 @@ export class LoginResultComponent implements OnInit {
 
   ngOnInit() {
     this.userData = JSON.parse(this.loginRegisterService.userData);
+    if (this.userData === undefined || this.userData === null) {
+      this.route.navigateByUrl('/login');
+    }
   }
   logout() {
     this.loginRegisterService.clearUserData();
