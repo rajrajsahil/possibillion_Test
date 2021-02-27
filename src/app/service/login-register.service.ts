@@ -7,7 +7,19 @@ import { Observable } from 'rxjs';
 })
 export class LoginRegisterService {
 
+  public USER_DATA: 'userData';
+  
   constructor(private readonly httpClient: HttpClient) { }
+
+  set userData(data: any) {
+    sessionStorage.setItem(this.USER_DATA, JSON.stringify(data));
+  }
+  get userData() {
+    return sessionStorage.getItem(this.USER_DATA);
+  }
+  clearUserData() {
+    sessionStorage.removeItem(this.USER_DATA);
+  }
   public login(email: string, pass: string): Observable<any> {
     const body = {
       username: email,

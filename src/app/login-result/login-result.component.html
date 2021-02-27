@@ -1,0 +1,24 @@
+<h1 class="text-center m-b-60">Login Successful</h1>
+
+
+<div class="col-12 m-b-30">
+  <div class="row">
+    <div class="line">
+      <span class="or">User Detail</span>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+
+  <div class="col-sm-12">
+      <h4 style="display: inline-block;">Name: {{userData.item.firstName}} {{userData.item.lastName}}</h4>
+      <button type="button" class="btn btn-danger" (click)="logout()" style="float: right;">Log Out</button>
+  </div>
+
+
+  <div class="col-sm-12">
+      <h4>Type: {{userData.item.type}}</h4>
+  </div>
+</div>
